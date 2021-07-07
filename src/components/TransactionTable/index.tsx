@@ -3,14 +3,7 @@ import { api } from '../../services/api';
 import { TransactionContext } from '../../TransactionsContext';
 import { Container } from './style';
 
-interface Transaction {
-    id: number;
-    title: string;
-    amount: number;
-    type: string;
-    category: string;
-    createdAt: string;
-}
+
 
 export function TransactionTable() {
     const data = useContext(TransactionContext);
