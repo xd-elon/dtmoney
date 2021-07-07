@@ -1,6 +1,3 @@
-import { useState } from 'react';
-
-
 import { Container, Content } from './styles';
 
 import logoImg from '../../assets/logo.svg'
@@ -17,8 +14,6 @@ export function Header({ onOpenNewTransactionModal }: HeaderProps) {
               <button type="button" onClick={onOpenNewTransactionModal}>
                 Nova transação
               </button>
-
-
             </Content>
         </Container>
     )
