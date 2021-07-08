@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState, ReactNode } from 'react';
 import { api } from './services/api';
 
 interface Transaction {
@@ -10,10 +10,26 @@ interface Transaction {
     createdAt: string;
 }
 
+interface TransactionInput {
+    title: string;
+    amount: number;
+    type: string;
+    category: string;
+}
+
+interface TransactionsProviderProps {
+    children: ReactNode;
+}
+
 export const TransactionContext = createContext<Transaction[]>([]);
 
-export function TransactionsProvider() {
+export function TransactionsProvider({ children }: TransactionsProviderProps) {
     const [transactions, setTransactions] = useState<Transaction[]>([]);
+
+    function createTransaction(transaction: Transaction) {
+ 
+        api.post('/transactions', transaction)
+    }
 
     useEffect(() => {
         api.get('transactions')
@@ -22,7 +38,7 @@ export function TransactionsProvider() {
 
     return (
         <TransactionContext.Provider value={transactions}>
-
+            { children }
         </TransactionContext.Provider>
     );
 }
