@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { FormEvent, useState, useContext } from 'react';
-import { TransactionContext } from '../../TransactionsContext';
+import { TransactionContext } from '../../hooks/useTransactions';
 
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg'

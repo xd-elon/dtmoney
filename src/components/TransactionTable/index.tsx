@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { TransactionContext } from '../../TransactionsContext';
+import { TransactionContext } from '../../hooks/useTransactions';
 import { Container } from './style';
 
 
